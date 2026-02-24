@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
 import "../style/Timer.css";
 import { ThemeProvider } from "../Provider/ContextProvider";
 function Timer() {
