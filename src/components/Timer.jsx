@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import "./Timer.css";
 function Timer() {
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(0);
+  const [minutes, setMinutes] = useState(2);
+  const [seconds, setSeconds] = useState(3);
   const [time, setTime] = useState(true);
   useEffect(() => {
     if (time) {
