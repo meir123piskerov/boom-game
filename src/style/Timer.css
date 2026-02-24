@@ -1,4 +1,5 @@
 section {
+  height: 100%;
   margin-top: 2rem;
   display: flex;
   justify-content: center;
@@ -40,4 +41,49 @@ section {
 
 .top h3 {
   border-bottom: 3px solid rgb(53 62 77);
+}
+
+.win h1 {
+  color: gold;
+  position: absolute;
+  top: 20%;
+  z-index: 1;
+  font-size: 200px;
+  margin-left: 50px;
+}
+.win h2 {
+  color: gold;
+  position: absolute;
+  top: 35%;
+  z-index: 1;
+  font-size: 200px;
+}
+.win p {
+  color: gold;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  font-size: 200px;
+  margin-left: 200px;
+}
+
+.win {
+  display: flex;
+  flex-direction: row;
+}
+
+.lose-msg {
+  color: gold;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  z-index: 1;
+  font-size: 500%;
+}
+.lose-msg p {
+  color: gold;
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  font-size: 200px;
 }
