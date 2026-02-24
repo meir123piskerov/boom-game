@@ -5,11 +5,12 @@ import '../style/ButtonReset.css'
 
 
 function ButtonReset() {
-  const {setCubeList, setCounter} = useContext(ThemeProvider);
+  const {setCubeList, setCounter,setBomb} = useContext(ThemeProvider);
   function reset(){
 
         setCubeList(createBoard);
         setCounter(prev => prev + 100)
+        setBomb(10)
   }
   return (
     <div>
