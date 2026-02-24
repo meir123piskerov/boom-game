@@ -8,10 +8,6 @@ import Cube from "./cube";
 function Board() {
   const { cubeList, setCubeList, bomb, setBomb ,counter} = useContext(ThemeProvider);
 
-import Cube from "./cube";
-
-function Board() {
-  const { cubeList, setCubeList, bomb, setBomb } = useContext(ThemeProvider);
   function randomNum() {
     const bombIndex = [];
     for (let i = 0; i < 10; ) {
@@ -59,9 +55,7 @@ function Board() {
           return item === "x" ? (
             <Cube key={index + counter}
 
-        {cubeList.map((item) => {
-          return item === "x" ? (
-            <Cube
+      
 
               onClick={(e) => {
                 e.target.className = "clear";
@@ -73,7 +67,7 @@ function Board() {
         })}
       </div>
     </div>
-  );
+  )
 }
 
-export default Board;
+export default Board
