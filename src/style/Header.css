@@ -1,0 +1,16 @@
+
+.header {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0.5px solid rgb(229, 229, 231);
+    color: white;
+    background-color: rgba(17, 24, 42);
+    padding-right: 2%;
+    padding-left: 2%;
+    box-shadow:3px 5px black;
+}
+.header .color-activ {
+ color:rgba(61, 122, 69) ;
+}

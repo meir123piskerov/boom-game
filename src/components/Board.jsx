@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
+import '../style/board.css'
+import Cube from './cube'
 
 function Board() {
   const [cubeList, setCubeList] = useState([])
 
   function randomNum() {
     const bombIndex = []
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10;) {
       const randomPlace = Math.floor(Math.random() * 80)
-      bombIndex.push(randomPlace)
+      if (!(bombIndex.includes(randomPlace))) {
+        bombIndex.push(randomPlace)
+        i++
+      }
     }
     return bombIndex
   }
+
   function createBoard() {
     const board = []
     const randomIndexes = randomNum()
@@ -24,14 +30,25 @@ function Board() {
     }
     return board
   }
-  
+
+
+
+
   useEffect(() => {
     setCubeList(createBoard())
   }, [])
 
 
   return (
-    <button onClick={()=>{console.log(cubeList);}}>click</button>
+    <div className='game-board'>
+      <div className="board">
+        {cubeList.map((item) => {
+          return (<Cube name={item} />)
+        })}
+
+      </div>
+
+    </div>
   )
 }
 

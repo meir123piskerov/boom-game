@@ -1,5 +1,7 @@
 .cube{
-    background-color: rgba(69, 75, 86);
+    background-color: rgba(32, 48, 73);
     width: 100%;
     height: 100%;
+    border: 1px solid rgba(85, 100, 119);
+ box-shadow: 0 4px 8px 0 rgba(3, 3, 3, 0.2), 0 6px 20px 0 rgba(247, 245, 245, 0.19);
 }   

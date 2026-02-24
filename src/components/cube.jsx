@@ -1,8 +1,8 @@
 import React from 'react'
 import '../style/cube.css'
-function Cube() {
+function Cube({name}) {
   return (
-    <div className='cube'></div>
+    <div className='cube'>{name}</div>
   )
 }
 
