@@ -8,9 +8,8 @@
 
 
 .board{
-    padding: 0.1%;
-    width: 50%;
-    height: 40rem;
+    width: 40%;
+    height: 33rem;
     background-color:rgba(28, 36, 55) ;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
