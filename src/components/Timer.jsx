@@ -14,16 +14,16 @@ function Timer() {
   } = useContext(ThemeProvider);
   useEffect(() => {
     if (time) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setSeconds(seconds - 1);
       }, 1000);
-
       if (seconds === 0 && minutes >= 1) {
         setMinutes(minutes - 1);
         setSeconds(seconds + 59);
       } else if (seconds === 1 && minutes === 0) {
         setTime(false);
       }
+      return () => clearTimeout(timer)
     }
   }, [minutes, seconds]);
 

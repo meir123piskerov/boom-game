@@ -23,7 +23,11 @@ function ContextProvider({ children }) {
         time,
         setTime,
         counter,
-        setCounter
+        setCounter,
+        minutes,
+        setMinutes,
+        seconds,
+        setSeconds
       }}
     >
       {children}
