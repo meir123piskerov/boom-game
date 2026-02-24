@@ -1,7 +1,11 @@
 import "./App.css";
-
+import Timer from "./components/timer/Timer";
 function App() {
-  return <></>;
+  return (
+    <>
+      <Timer></Timer>
+    </>
+  );
 }
 
 export default App;
