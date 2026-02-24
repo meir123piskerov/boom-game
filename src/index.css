@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+
+body {
+    background-color:rgba(28, 36, 55) ;
+}

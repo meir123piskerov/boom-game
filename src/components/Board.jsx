@@ -1,20 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
+import '../style/board.css'
+import Cube from './cube'
 
 function Board() {
-  function createBord() {
-    const number1 = Math.floor(Math.random() * 100);
-    let list = [];
-    for (let i = 0; i < 100; i++) {
-      if (i === number1) {
-        list.push("💣");
-      } else {
-        list.push("❌");
+  const [cubeList, setCubeList] = useState([])
+
+  function randomNum() {
+    const bombIndex = []
+    for (let i = 0; i < 10;) {
+      const randomPlace = Math.floor(Math.random() * 80)
+      if (!(bombIndex.includes(randomPlace))) {
+        bombIndex.push(randomPlace)
+        i++
       }
     }
-    return list;
+    return bombIndex
   }
 
-  return <div></div>;
+  function createBoard() {
+    const board = []
+    const randomIndexes = randomNum()
+    for (let i = 0; i < 80; i++) {
+      if (randomIndexes.includes(i)) {
+        board.push("bomb")
+      }
+      else {
+        board.push("x")
+      }
+    }
+    return board
+  }
+
+
+
+
+  useEffect(() => {
+    setCubeList(createBoard())
+  }, [])
+
+
+  return (
+    <div className='game-board'>
+      <div className="board">
+        {cubeList.map((item) => {
+          return (<Cube name={item} />)
+        })}
+
+      </div>
+
+    </div>
+  )
 }
 
-export default Board;
+export default Board
