@@ -9,6 +9,7 @@ function ContextProvider({ children }) {
   const [time, setTime] = useState(true);
   const [counter ,setCounter] = useState(0)
 
+
   return (
     <ThemeProvider
       value={{
@@ -22,8 +23,10 @@ function ContextProvider({ children }) {
         setSeconds,
         time,
         setTime,
+
         counter,
         setCounter
+
       }}
     >
       {children}
