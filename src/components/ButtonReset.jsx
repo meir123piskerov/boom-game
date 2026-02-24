@@ -1,10 +1,11 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeProvider } from '../Provider/ContextProvider';
 import { createBoard } from '../utils/creatBoard';
 import '../style/ButtonReset.css'
 
 
 function ButtonReset() {
+
   const {setCubeList, setCounter,setBomb ,setSeconds,setMinutes} = useContext(ThemeProvider);
   function reset(){
 
@@ -14,10 +15,11 @@ function ButtonReset() {
         setMinutes(1)
         setSeconds(0)
   }
+
   return (
     <div>
       <button className='button-reset' onClick={reset}>Restart Game</button>
-      
+
     </div>
   );
 }
