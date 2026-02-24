@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../style/board.css'
+import { ThemeProvider } from '../Provider/ContextProvider'
 import Cube from './cube'
 
 function Board() {
-  const [cubeList, setCubeList] = useState([])
-  const [bomb, setBomb] = useState(9)
+  // const [cubeList, setCubeList] = useState([])
+  // const [bomb, setBomb] = useState(9)
+  const {cubeList,setCubeList, bomb, setBomb} = useContext(ThemeProvider)
   function randomNum() {
     const bombIndex = []
     for (let i = 0; i < 10;) {

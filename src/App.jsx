@@ -3,13 +3,17 @@ import Timer from "./components/timer/Timer";
 import Header from "./components/Header";
 import Board from "./components/Board";
 import './style/Header.css'
+import { ContextProvider } from "./Provider/ContextProvider";
+
+
 
 function App() {
   return <>
-    
-  <Header></Header>
-   <Timer></Timer>
-  <Board />
+    <ContextProvider>
+      <Header></Header>
+      <Timer></Timer>
+      <Board />
+    </ContextProvider>
   </>
 
 }
