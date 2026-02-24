@@ -4,7 +4,7 @@ import Cube from './cube'
 
 function Board() {
   const [cubeList, setCubeList] = useState([])
-
+  const [bomb, setBomb] = useState(9)
   function randomNum() {
     const bombIndex = []
     for (let i = 0; i < 10;) {
@@ -31,7 +31,14 @@ function Board() {
     return board
   }
 
-
+  function bombClick(e) {
+    if (e.target.className !== "bomb") {
+      e.target.className = "bomb";
+      setBomb(bomb - 1)
+      console.log(bomb);
+    }
+    console.log(e.target.className);
+  }
 
 
   useEffect(() => {
@@ -43,7 +50,8 @@ function Board() {
     <div className='game-board'>
       <div className="board">
         {cubeList.map((item) => {
-          return (<Cube name={item} />)
+
+          return (item === "x" ? <Cube onClick={(e) => { e.target.className = "clear" }} /> : <Cube onClick={bombClick} />)
         })}
 
       </div>
