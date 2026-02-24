@@ -4,6 +4,9 @@ import Header from "./components/Header";
 import Board from "./components/Board";
 import "./style/Header.css";
 import { ContextProvider } from "./Provider/ContextProvider";
+import ButtonReset from "./components/ButtonReset";
+
+
 
 function App() {
   return (
@@ -12,6 +15,10 @@ function App() {
         <Header></Header>
         <Timer></Timer>
         <Board />
+
+        <ButtonReset></ButtonReset>
+
+
       </ContextProvider>
     </>
   );

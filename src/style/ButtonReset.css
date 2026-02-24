@@ -1,0 +1,13 @@
+.button-reset {
+    display: flex;
+    border-radius: 19px;
+    background-color: rgb(241, 243, 239);
+    background-image: linear-gradient(to top, rgba(49, 77, 36), rgba(106, 142, 78));
+    margin: 0 auto;
+    width: 25vw;
+    height: 3vh;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
