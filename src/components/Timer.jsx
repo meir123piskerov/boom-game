@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
-
-import "./Timer.css";
+import React, { useEffect, useContext } from "react";
+import "../style/Timer.css";
+import { ThemeProvider } from "../Provider/ContextProvider";
 function Timer() {
-  const [minutes, setMinutes] = useState(1);
-  const [seconds, setSeconds] = useState(0);
-  const [time, setTime] = useState(true);
+  const {
+    minutes,
+    setMinutes,
+    seconds,
+    setSeconds,
+    time,
+    setTime,
+    bomb,
+    setBomb,
+  } = useContext(ThemeProvider);
   useEffect(() => {
     if (time) {
       setTimeout(() => {
@@ -28,7 +35,7 @@ function Timer() {
           <h3>Bombs Remaining</h3>
         </div>
         <div className="bottom">
-          <h1>5</h1>
+          <h1>{bomb}</h1>
         </div>
       </div>
       <div className="div-main">
