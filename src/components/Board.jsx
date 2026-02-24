@@ -1,20 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from 'react'
 
 function Board() {
-  function createBord() {
-    const number1 = Math.floor(Math.random() * 100);
-    let list = [];
-    for (let i = 0; i < 100; i++) {
-      if (i === number1) {
-        list.push("💣");
-      } else {
-        list.push("❌");
+  const [cubeList, setCubeList] = useState([])
+
+  function randomNum() {
+    const bombIndex = []
+    for (let i = 0; i < 10; i++) {
+      const randomPlace = Math.floor(Math.random() * 80)
+      bombIndex.push(randomPlace)
+    }
+    return bombIndex
+  }
+  function createBoard() {
+    const board = []
+    const randomIndexes = randomNum()
+    for (let i = 0; i < 80; i++) {
+      if (randomIndexes.includes(i)) {
+        board.push("bomb")
+      }
+      else {
+        board.push("x")
       }
     }
-    return list;
+    return board
   }
+  
+  useEffect(() => {
+    setCubeList(createBoard())
+  }, [])
 
-  return <div></div>;
+
+  return (
+    <button onClick={()=>{console.log(cubeList);}}>click</button>
+  )
 }
 
-export default Board;
+export default Board
