@@ -10,34 +10,31 @@ function Timer() {
     time,
     setTime,
     bomb,
-    setBomb,
+    flag,
+    setFlag,
+    lose,
+    setLose,
   } = useContext(ThemeProvider);
-  const [flag, setFlag] = useState(true);
-  const [lose, setLose] = useState(false);
-  useEffect(() => {
 
+  useEffect(() => {
     if (time && bomb > 0) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         setSeconds(seconds - 1);
       }, 1000);
 
       if (seconds === -1 && minutes >= 1) {
-
         setMinutes(minutes - 1);
         setSeconds(seconds + 60);
       } else if (seconds === 1 && minutes === 0) {
         setTime(false);
       }
-      return () => clearTimeout(timer)
+      return () => clearTimeout(timer);
     }
     if (time && bomb === 0) {
-      alert("you win");
       setFlag(false);
     }
     if (!time && bomb > 0) {
-      console.log("hey");
       setLose(true);
-      // alert("loser try again");
     }
   }, [minutes, seconds]);
 

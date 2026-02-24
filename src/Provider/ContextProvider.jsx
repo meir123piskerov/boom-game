@@ -4,11 +4,12 @@ const ThemeProvider = createContext();
 function ContextProvider({ children }) {
   const [cubeList, setCubeList] = useState([]);
   const [bomb, setBomb] = useState(10);
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(3);
+  const [minutes, setMinutes] = useState(1);
+  const [seconds, setSeconds] = useState(0);
   const [time, setTime] = useState(true);
-  const [counter, setCounter] = useState(0)
-
+  const [counter, setCounter] = useState(0);
+  const [flag, setFlag] = useState(true);
+  const [lose, setLose] = useState(false);
 
   return (
     <ThemeProvider
@@ -25,6 +26,10 @@ function ContextProvider({ children }) {
         setTime,
         counter,
         setCounter,
+        flag,
+        setFlag,
+        lose,
+        setLose,
       }}
     >
       {children}
