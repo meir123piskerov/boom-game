@@ -6,7 +6,10 @@ import { createBoard } from "../utils/creatBoard";
 import Cube from "./cube";
 
 function Board() {
+
+
   const { cubeList, setCubeList, bomb, setBomb ,counter} = useContext(ThemeProvider);
+
 
   function randomNum() {
     const bombIndex = [];

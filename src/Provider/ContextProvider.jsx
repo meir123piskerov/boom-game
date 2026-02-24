@@ -35,6 +35,7 @@ function ContextProvider({ children }) {
       {children}
     </ThemeProvider>
   );
+
 }
 
 export { ContextProvider, ThemeProvider };
